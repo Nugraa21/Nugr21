@@ -1,159 +1,143 @@
-<body>
-    <script>
-        function encryptText() {
-    const inputText = document.getElementById('inputText').value;
-    let encryptedText = '';
-
-    for (let i = 0; i < inputText.length; i++) {
-        encryptedText += String.fromCharCode(inputText.charCodeAt(i) + 3);
-    }
-
-    document.getElementById('outputText').value = encryptedText;
-}
-
-function decryptText() {
-    const encryptedText = document.getElementById('encryptedText').value;
-    let decryptedText = '';
-
-    for (let i = 0; i < encryptedText.length; i++) {
-        decryptedText += String.fromCharCode(encryptedText.charCodeAt(i) - 3);
-    }
-
-    document.getElementById('decryptedText').value = decryptedText;
-}
-
-
-// -------------------------------- Mematikan mode inspek atau klick kanan -------------------------------- //
-
-
-document.addEventListener('contextmenu', function (e) {
-  e.preventDefault();
-
-  var confirmation = confirm('Menu konteks dinonaktifkan! Klik "OK" untuk menghubungi kami melalui GitHub atau WhatsApp.');
-
-  if (confirmation) {
-    var githubLink = 'https://github.com/Nugraa21';
-    var whatsappLink = 'https://wa.me/your-whatsapp';
-
-    var userChoice = prompt('Pilih salah satu:\n1. GitHub\n2. WhatsApp');
-
-    if (userChoice === '1') {
-      window.location.href = githubLink;
-    } else if (userChoice === '2') {
-      window.location.href = whatsappLink;
-    } else {
-      alert('Pilihan tidak valid.');
-    }
-  }
-});
-
-// -------------------------------- Mencegah agar tidak bisa di copy -------------------------------- //
-
-
-document.addEventListener('selectstart', function (e) {
-  e.preventDefault();
-});
-
-document.addEventListener('contextmenu', function (e) {
-  e.preventDefault();
-});
-
-document.addEventListener('keydown', function (e) {
-  // Cegah menggunakan kombinasi keyboard untuk membuka developer tools
-  if (e.key === 'F12' || (e.key === 'Shift' && e.key === 'Ctrl' && e.key === 'I')) {
-    e.preventDefault();
-  }
-});
-document.addEventListener('keydown', function (e) {
-  // Cegah menggunakan kombinasi keyboard untuk membuka developer tools
-  if (e.key === 'ctrl + u' || (e.key === 'Shift' && e.key === 'Ctrl' && e.key === 'I')) {
-    e.preventDefault();
-  }
-});
-    // Mencegah drop gambar
-    document.addEventListener('drop', function (e) {
-      e.preventDefault();
-    });
-        // Menyembunyikan gambar saat diambil dari sumber lain
-        document.addEventListener('dragstart', function (e) {
-          if (e.target.tagName.toLowerCase() === 'img') {
-            e.preventDefault();
-          }
-        });
-
-    </script>
-        <div class="container">
-            <div class="block1">
-                <textarea id="inputText" placeholder="Masukkan teks di sini..."></textarea>
-                <button onclick="encryptText()">01001</button>
-                <textarea id="outputText" readonly placeholder="Teks yang dienkripsi akan muncul di sini..."></textarea>
-            </div>
-            <div class="block2">
-                <textarea id="encryptedText" placeholder="Masukkan teks yang dienkripsi di sini..."></textarea>
-                <button onclick="decryptText()">10110</button>
-                <textarea id="decryptedText" readonly placeholder="Teks yang didekripsi akan muncul di sini..."></textarea>
-            </div>
-        </div>
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    background-color: #10071d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.container {
-    background: #1100ff1c;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.211);
-    border-radius: 8px;
-    width: 270px;
-    text-align: center;
-}
-
-h1 {
-    margin-bottom: 20px;
-}
-
-textarea {
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: 80px;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #09207c;
-    background-color: #01011a;
-    color: #fff;
-}
-
-button {
-    width: 30%;
-    padding: 10px;
-    background: #210086;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-button:hover {
-    background: #4f4f4f31;
-}
-
-
-    </style>
-</body>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1010010100010</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Hacker Typer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
+<body>
+    <div id="navbar">
+        <span id="profile-name">N21.Were</span>
+        <span id="profile-name"><a href="enkripsi.html">HI.......</a></span>
+    </div>
+    <div id="container">
+        <button id="installButton">Install</button>
+        <textarea id="codeArea" readonly></textarea>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
+<style>
+    body {
+    background-color: black;
+    color: green;
+    margin: 0;
+    font-family: 'VT323', monospace;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#navbar {
+    width: 100%;
+    background-color: #3333334f;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: left;
+    display: flex;
+    justify-content: space-around;
+}
+
+#profile-name {
+    font-size: 20px;
+    display: block;
+    margin-right: 10px;
+}
+
+#container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#installButton {
+    background-color: #3333331e;
+    color: rgb(0, 60, 255);
+    border: none;
+    padding: 10px 20px;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#installButton:hover {
+    background-color: #555;
+}
+
+#codeArea {
+    width: 80%;
+    height: 80%;
+    background-color: black;
+    color: rgb(2, 0, 128);
+    border: none;
+    resize: none;
+    outline: none;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-y: auto;
+}
+
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const codeArea = document.getElementById('codeArea');
+    const installButton = document.getElementById('installButton');
+    const code = `
+    - Membaca akses -
+
+    Instal : 
+
+    10% ----------------------
+    20% ----------------------
+    30% ----------------------
+    40% ----------------------
+    50% ----------------------
+    60% ----------------------
+    70% ----------------------
+    80% ----------------------
+    90% ----------------------
+    100% ---------------- Done
+
+    Uploading ransomware sucses 
+        {consol.copy (5110.lock)}   - LOCK FOLDERS < sucses >
+        -----------------------------------------------------
+        {
+            includ user. < BILA INGIN DATA KAM KEMBALI HUBUNGI N21 
+        }
+        -----------------------------------------------------
+    
+        -----------------------------------------
+        |                                       |
+        |  User        :  Nugra21               |
+        |  ip          :  192.168.12.31         |
+        |  ####        :  ###########           |
+        |                                       |
+        -----------------------------------------
+`;
+
+    let index = 0;
+    let typingInterval;
+
+    function typeCode() {
+        if (index < code.length) {
+            codeArea.value += code[index];
+            index++;
+            codeArea.scrollTop = codeArea.scrollHeight;  // Scroll to the bottom
+        } else {
+            clearInterval(typingInterval); // Stop typing when done
+        }
+    }
+
+    installButton.addEventListener('click', function() {
+        installButton.style.display = 'none'; // Hide the button
+        typingInterval = setInterval(typeCode, 50); // Adjust typing speed here (milliseconds per character)
+    });
+});
+
+</script>
