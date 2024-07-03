@@ -1,0 +1,128 @@
+<body>
+    <script>
+        function encryptText() {
+    const inputText = document.getElementById('inputText').value;
+    let encryptedText = '';
+
+    for (let i = 0; i < inputText.length; i++) {
+        encryptedText += String.fromCharCode(inputText.charCodeAt(i) + 3);
+    }
+
+    document.getElementById('outputText').value = encryptedText;
+}
+
+function decryptText() {
+    const encryptedText = document.getElementById('encryptedText').value;
+    let decryptedText = '';
+
+    for (let i = 0; i < encryptedText.length; i++) {
+        decryptedText += String.fromCharCode(encryptedText.charCodeAt(i) - 3);
+    }
+
+    document.getElementById('decryptedText').value = decryptedText;
+}
+
+
+// -------------------------------- Mematikan mode inspek atau klick kanan -------------------------------- //
+
+
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+
+  var confirmation = confirm('Menu konteks dinonaktifkan! Klik "OK" untuk menghubungi kami melalui GitHub atau WhatsApp.');
+
+  if (confirmation) {
+    var githubLink = 'https://github.com/Nugraa21';
+    var whatsappLink = 'https://wa.me/your-whatsapp';
+
+    var userChoice = prompt('Pilih salah satu:\n1. GitHub\n2. WhatsApp');
+
+    if (userChoice === '1') {
+      window.location.href = githubLink;
+    } else if (userChoice === '2') {
+      window.location.href = whatsappLink;
+    } else {
+      alert('Pilihan tidak valid.');
+    }
+  }
+});
+
+// -------------------------------- Mencegah agar tidak bisa di copy -------------------------------- //
+
+
+    </script>
+        <div class="container">
+            <div class="block1">
+                <textarea id="inputText" placeholder="Masukkan teks di sini..."></textarea>
+                <button onclick="encryptText()">01001</button>
+                <textarea id="outputText" readonly placeholder="Teks yang dienkripsi akan muncul di sini..."></textarea>
+            </div>
+            <div class="block2">
+                <textarea id="encryptedText" placeholder="Masukkan teks yang dienkripsi di sini..."></textarea>
+                <button onclick="decryptText()">10110</button>
+                <textarea id="decryptedText" readonly placeholder="Teks yang didekripsi akan muncul di sini..."></textarea>
+            </div>
+        </div>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #10071d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #1100ff1c;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.211);
+    border-radius: 8px;
+    width: 270px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+textarea {
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 80px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #09207c;
+    background-color: #01011a;
+    color: #fff;
+}
+
+button {
+    width: 30%;
+    padding: 10px;
+    background: #210086;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background: #4f4f4f31;
+}
+
+
+    </style>
+</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1010010100010</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+</html>
